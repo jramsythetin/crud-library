@@ -1,7 +1,9 @@
-package infra.repository;
+package library.infra.repository;
 
-import infra.entity.Book;
+import library.infra.entity.Book;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
 
 public interface BookRepository extends JpaRepository <Book, Long> {
 }
