@@ -17,11 +17,11 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "name", length = 250)
-    String name;
+    private String name;
     @Column (name = "author", length = 250)
-    String author;
+    private String author;
     @Column (name = "genre", length = 40)
-    String genre;
+    private String genre;
     @Column (name = "isbn", length = 14)
-    String isbn;
+    private String isbn;
 }

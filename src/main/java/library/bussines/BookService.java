@@ -12,25 +12,22 @@ public class BookService {
 
     private final BookRepository bookRepository;
 
-    public Book saveBook(Book book){
-       try {
-           String name = book.getName();
-           boolean exist = existsByName(name);
-           if (exist){
-               throw new ConflictException("This book exist" + name);
-           }
-           return bookRepository.save(book);
-       } catch (ConflictException e){
-           throw new ConflictException("This book exist", e.getCause());
-
-       }
+    public Book saveBook(Book book) {
+        try {
+            String name = book.getName();
+            if (existsByName(name)) {
+                throw new ConflictException("This book already exists: " + name);
+            }
+            return bookRepository.save(book);
+        } catch (ConflictException ce) {
+            throw new ConflictException("Error while trying to save book: " + book.getName(), ce);
+        }
     }
-    public boolean existsByName(String name){
+
+
+    public boolean existsByName(String name) {
         return bookRepository.existsByName(name);
     }
-
-
-
 
 
 }
