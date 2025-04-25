@@ -15,6 +15,13 @@ public class BookController {
 
     @PostMapping
     public ResponseEntity<Book> saveBook(@RequestBody Book book){
-        return ResponseEntity.ok(bookService.SaveBook(book));
+        return ResponseEntity.ok(bookService.saveBook(book));
+    }
+
+    @DeleteMapping
+    public ResponseEntity<Book>deleteBook(@RequestBody Book book){
+        bookService.deleteBook(book);
+        return ResponseEntity.noContent().build();
+
     }
 }
