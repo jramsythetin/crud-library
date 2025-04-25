@@ -20,7 +20,7 @@ public class BookController {
 
     @DeleteMapping
     public ResponseEntity<Book>deleteBook(@RequestBody Book book){
-        bookService.deleteBook(book);
+        bookService.DeleteBook(book);
         return ResponseEntity.noContent().build();
 
     }
