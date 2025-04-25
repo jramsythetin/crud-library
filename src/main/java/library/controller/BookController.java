@@ -18,10 +18,6 @@ public class BookController {
         return ResponseEntity.ok(bookService.saveBook(book));
     }
 
-    @DeleteMapping
-    public ResponseEntity<Book>deleteBook(@RequestBody Book book){
-        bookService.DeleteBook(book);
-        return ResponseEntity.noContent().build();
 
-    }
+
 }
