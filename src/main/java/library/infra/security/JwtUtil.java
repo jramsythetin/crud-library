@@ -1,4 +1,4 @@
-package library.bussines.security;
+package library.infra.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

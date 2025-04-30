@@ -1,4 +1,4 @@
-package library.bussines.security;
+package library.infra.security;
 
 import com.javanauta.aprendendospring.infrastructure.entity.Usuario;
 import com.javanauta.aprendendospring.infrastructure.repository.UsuarioRepository;
