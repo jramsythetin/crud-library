@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table (name = "book")
-public class Book implements UserDetails {
+public class Book{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,18 +30,4 @@ public class Book implements UserDetails {
     @Column (name = "isbn", length = 14)
     private String isbn;
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
-    }
-
-    @Override
-    public String getPassword() {
-        return "password";
-    }
-
-    @Override
-    public String getUsername() {
-        return "email";
-    }
 }
